@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:1F6FEB&height=220&section=header&text=Ponmudi%20M.R.&fontSize=60&fontColor=58A6FF&animation=fadeIn&fontAlignY=38&desc=RF%20%7C%20SDR%20%7C%20Embedded%20Linux%20%7C%20LoRa%20Mesh&descAlignY=58&descSize=20&descColor=8B949E" width="100%"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=58A6FF&center=true&vCenter=true&width=650&lines=Building+GPS-denied+positioning+systems;Decoding+signals+from+low-earth+orbit;LoRa+mesh+networks+for+disaster+response;Lead+%40+Team+404" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=58A6FF&center=true&vCenter=true&width=650&lines=Building+GPS-denied+positioning+systems;Decoding+signals+from+low-earth+orbit;LoRa+mesh+networks+for+disaster+response;Lead+%40+Team+404;Aspiring+DRDO+%2F+RF+Systems+Engineer" />
 
 <br>
 
@@ -14,48 +14,122 @@
 
 <br>
 
-## 🛰️ What I Build
+## 👋 About Me
+
+I'm a second-year **B.E. Electronics and Communication Engineering** student who builds hardware that works where GPS and cell towers don't reach — LEO satellite positioning, LoRa mesh networks, and signal classification from raw RF. I lead **Team 404** and I'm active in IEEE Electron Devices Society, BIT-IECC, and the AViNYA Club.
+
+I care about the physical layer: getting bits reliably out of noisy channels, whether that's a Doppler shift off an Orbcomm satellite or a packet hopping across a disaster-hit village mesh network.
+
+```yaml
+name:          Ponmudi M.R.
+role:          B.E. ECE Student · RF/Embedded Systems Engineer (in training)
+institution:   Bannari Amman Institute of Technology, Sathyamangalam, Tamil Nadu
+roll_no:       22EC004
+location:      Coimbatore, Tamil Nadu, India
+current_focus: SDR signal classification, LEO-PNT, embedded Linux infra
+goal:          MS in Germany (Winter 2027) — RF/SDR industry track
+```
+
+<br>
+
+## 🎓 Education
+
+| Institution | Program | Details |
+|---|---|---|
+| **Bannari Amman Institute of Technology** | B.E. Electronics & Communication Engineering | 2nd Year · Roll No. 22EC004 · Semester III (2026) |
+
+**Coursework:** Electron Devices, Signal Processing, Electromagnetism & Modern Physics, Data Structures & Algorithms, Engineering Mathematics, Engineering Chemistry
+
+**Memberships:** IEEE Electron Devices Society · BIT-IECC · AViNYA Club
+
+<br>
+
+## 🚀 Flagship Projects
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
 ### 📡 TribalNet
-LoRa SX1278 + ESP32 mesh network for off-grid disaster comms & GPS tracking.
+**Off-grid disaster communication mesh network**
 
-🏆 **1st Prize** — NHIDE 2026 (₹50,000)
-🌐 **National Finalist** — IEEE YESIST12 2026
-📄 Patent in process
+Built with `LoRa SX1278` + `ESP32`, providing text messaging and GPS location tracking with zero cellular or internet dependency — designed for post-disaster and remote-area deployment.
+
+**My role:** Team lead, hardware + firmware design
+
+🏆 1st Prize — NHIDE 2026 (₹50,000)
+🌐 National Finalist — IEEE YESIST12 2026 (Team 404)
+📄 Patent filing in process
+📚 Submitted to YUKTI National Innovation Repository
+🎤 Presented at VishwaNova 2026, MIT-WPU Pune
+
+`ESP32` `LoRa` `Embedded C` `GPS` `Mesh Networking`
 
 </td>
 <td width="50%" valign="top">
 
-### 🛰️ LEO-PNT Receiver
-GPS-denied positioning using Doppler shift from NOAA / Orbcomm / Iridium passes.
+### 🛰️ Cognitive Opportunistic LEO-PNT Receiver
+**GPS-denied positioning system** (final-year project, Team 404)
+
+Extracts Doppler shift data from opportunistic LEO satellite signals — NOAA, Orbcomm, Iridium — to compute position without relying on GPS at all.
+
+**My role:** SDR signal capture & classification pipeline
 
 🎯 Sub-metre accuracy target
 📦 Handheld form factor
-🚀 Submitted under iDEX/DRDO
+🚀 Submitted under iDEX/DRDO innovation challenge
+
+`RTL-SDR` `Python` `Signal Processing` `YOLOv8` `Doppler Analysis`
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 💰 Kanaku Book
-Mobile-first payment ledger PWA for a family textile business.
+### 🎯 SDR Signal Classifier
+**YOLOv8-based automatic signal identification**
 
-⚙️ Google Sheets backend (Apps Script)
-📴 Offline-first design
+Built a synthetic dataset generator (`sdr_synth_generator.py`) to train a computer-vision model on spectrogram images, classifying 7 distinct RF signal types automatically.
+
+**Signal classes:** NOAA APT · Orbcomm · POCSAG · Military UHF/TACAN · Civil airband · VHF · Noise
+
+`Python` `YOLOv8` `RTL-SDR` `SDR++` `SatDump` `JAERO`
 
 </td>
 <td width="50%" valign="top">
 
-### 🎯 SDR Signal Classifier
-YOLOv8-based classifier trained on a custom synthetic dataset.
+### 💰 Kanaku Book
+**Payment ledger PWA for a family textile business**
 
-🧠 7 signal classes
-📡 RTL-SDR V4 capture pipeline
+Mobile-first web app replacing paper ledgers, with a Google Sheets backend via Apps Script and an attendance/shift module for four stations.
+
+**Live:** [ponmudimr.github.io/kanaku-book](https://ponmudimr.github.io/kanaku-book/)
+
+`HTML/ES5` `Google Apps Script` `Google Sheets API` `PWA`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### ⏱️ ChronoBIT'26 — 24-Hour Digital Clock
+**Pure hardware logic design** (Team Zero Hour)
+
+Built entirely from 555 timers and CD4026 decade counters driving seven-segment displays — no microcontroller.
+
+🥈 2nd Prize, ChronoBIT'26 Hackathon
+
+`555 Timer IC` `CD4026` `Digital Logic` `PCB Design`
+
+</td>
+<td width="50%" valign="top">
+
+### 🖥️ College Lab NFS/NIS Server
+**Centralized Linux lab infrastructure** (25-client deployment)
+
+Designed and deployed a centralized authentication + shared-storage system for a 25-machine Ubuntu lab using NFS and NIS.
+
+`Ubuntu Server 24` `NFS` `NIS` `Linux Administration`
 
 </td>
 </tr>
@@ -63,18 +137,41 @@ YOLOv8-based classifier trained on a custom synthetic dataset.
 
 <br>
 
-## 🔧 Currently On The Bench
+## 🛠️ Skills
 
-```yaml
-sdr:        RTL-SDR V4 — NOAA APT, Orbcomm, POCSAG, TACAN, civil airband
-linux:      Fedora Workstation — freshly migrated, NFS/NIS lab server WIP
-hardware:   Arduino UNO Q — Debian + Zephyr dual-core, Bridge RPC
-goal:       MS in Germany, Winter 2027 — RF/SDR industry track
-```
+<table>
+<tr>
+<td valign="top" width="33%">
 
-<br>
+**Languages**
+- C / C++
+- Python
+- Bash
+- Embedded C
 
-## ⚡ Tech Stack
+</td>
+<td valign="top" width="33%">
+
+**Embedded & RF**
+- ESP32 / Arduino
+- LoRa (SX1278)
+- SDR (RTL-SDR)
+- PCB Design (Altium)
+- Signal Processing
+
+</td>
+<td valign="top" width="33%">
+
+**Systems & Tools**
+- Linux (Fedora/Ubuntu)
+- Git / GitHub
+- NFS / NIS Administration
+- VS Code
+- Zephyr RTOS
+
+</td>
+</tr>
+</table>
 
 <div align="center">
 
@@ -87,13 +184,45 @@ goal:       MS in Germany, Winter 2027 — RF/SDR industry track
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-
 ![SDR++](https://img.shields.io/badge/SDR++-6E40C9?style=for-the-badge)
 ![LoRa](https://img.shields.io/badge/LoRa-2E7D32?style=for-the-badge)
 ![Zephyr RTOS](https://img.shields.io/badge/Zephyr%20RTOS-662E91?style=for-the-badge)
 ![Altium](https://img.shields.io/badge/Altium-E67300?style=for-the-badge)
 
 </div>
+
+<br>
+
+## 🏆 Achievements & Recognition
+
+| Award | Event | Result |
+|---|---|---|
+| 🥇 1st Prize (₹50,000) | NHIDE 2026 | TribalNet |
+| 🌐 National Finalist | IEEE YESIST12 2026 | TribalNet (Submission ID 3280) |
+| 🥈 2nd Prize | ChronoBIT'26 Hackathon | 24-Hour Digital Clock |
+| 🎤 Presenter | VishwaNova 2026, MIT-WPU Pune | TribalNet |
+| 📄 Patent (in process) | — | TribalNet |
+| 📚 Repository Submission | YUKTI National Innovation Repository | TribalNet |
+
+<br>
+
+## 📜 Programs & Certifications
+
+- 🎓 **Google Gemini Student Ambassador 2026**
+- 🔬 **IEEE Electron Devices Society** — Member
+- 💼 Applied — **AICTE Yashasvi Scholarship**
+- 📡 Researching **Amateur Radio (ASOC) licensing**, WPC Wing India — ECE graduates exempt from Section-A
+
+<br>
+
+## 🔧 Currently On The Bench
+
+```yaml
+sdr:        RTL-SDR V4 — NOAA APT, Orbcomm, POCSAG, TACAN, civil airband monitoring
+linux:      Fedora Workstation — recently migrated, NFS/NIS lab server WIP
+hardware:   Arduino UNO Q — dual-core Debian + Zephyr, exploring Bridge RPC
+learning:   German (Nicos Weg) — targeting TU Munich / RWTH Aachen / TU Berlin
+```
 
 <br>
 
@@ -112,7 +241,7 @@ goal:       MS in Germany, Winter 2027 — RF/SDR industry track
 
 <br>
 
-## 🏆 Trophy Case
+## 🏅 Trophy Case
 
 <div align="center">
 <img src="https://github-profile-trophy.vercel.app/?username=ponmudimr&theme=tokyonight&no-frame=true&column=7&margin-w=10&margin-h=10" />
@@ -136,12 +265,13 @@ goal:       MS in Germany, Winter 2027 — RF/SDR industry track
 
 <br>
 
-## 🌐 Connect
+## 📫 Get In Touch
 
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mrponmudi)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ponmudimr)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ponmudimr.ec25@bitsathy.ac.in)
 
 </div>
 
