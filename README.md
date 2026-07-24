@@ -1,82 +1,39 @@
-<h1 align="center">Hi 👋, I'm Ponmudi M.R.</h1>
+<div align="center">
 
-<h3 align="center">
-Embedded Systems • RF Engineering • Embedded Linux • SDR
-</h3>
+# Ponmudi M.R.
 
-<p align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&center=true&vCenter=true&width=700&lines=Embedded+Systems+Engineer;Embedded+Linux+Learner;RF+%26+SDR+Enthusiast;PCB+Designer;IoT+Developer;Future+DRDO+Engineer"/>
-</p>
+### Signals in, systems out.
 
----
+`RF Engineering` · `Software Defined Radio` · `Embedded Linux` · `LoRa Mesh Networks`
 
-# 👨‍💻 About Me
+</div>
 
-🎓 B.E. Electronics and Communication Engineering
+<br>
 
-🏫 Bannari Amman Institute of Technology
+```c
+/* whoami.c */
+#include <stdio.h>
 
-📍 Tamil Nadu, India
+int main(void) {
+    printf("B.E. ECE @ Bannari Amman Institute of Technology\n");
+    printf("Lead, Team 404\n");
+    printf("Building GPS-denied positioning & disaster-comms hardware\n");
+    printf("Location: Coimbatore, Tamil Nadu — 11.02N, 77.22E\n");
+    return 0;
+}
+```
 
-🚀 Passionate about
+<br>
 
-- Embedded Systems
-- RF Engineering
-- Software Defined Radio
-- Embedded Linux
-- PCB Design
-- LoRa Communication
-- IoT
+## What I've Shipped
 
----
+**TribalNet** — LoRa SX1278 + ESP32 mesh network for off-grid disaster communication and GPS tracking.
+`🏆 1st Prize, NHIDE 2026 (₹50,000)` · `🌐 IEEE YESIST12 2026 National Finalist` · `📄 Patent in process`
 
-# 🛠 Tech Stack
+**Cognitive Opportunistic LEO-PNT Receiver** — GPS-denied positioning using Doppler shift extracted from NOAA/Orbcomm/Iridium satellite passes. Sub-metre accuracy target, handheld form factor, zero GPS dependency. Submitted under iDEX/DRDO.
 
-<p align="center">
+**Kanaku Book** — Mobile-first payment ledger PWA for a family textile business, Google Sheets backend, offline-first design.
 
-<img src="https://skillicons.dev/icons?i=c,cpp,python,bash,linux,git,github,vscode,arduino,raspberrypi"/>
+<br>
 
-</p>
-
----
-
-# 🚀 Current Projects
-
-- 📡 TribalNet
-- 🛰 Leo-PNT Receiver
-- 🐧 Embedded Linux
-- 🔧 PCB Design
-- 📟 ESP32 Projects
-
----
-
-# 📊 GitHub Stats
-
-<p align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=ponmudimr&show_icons=true&theme=tokyonight"/>
-
-<img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=ponmudimr&theme=tokyonight"/>
-
-</p>
-
----
-
-# 📈 Most Used Languages
-
-<p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ponmudimr&layout=compact&theme=tokyonight"/>
-
-</p>
-
----
-
-# 📫 Connect With Me
-
-- GitHub: https://github.com/ponmudimr
-- LinkedIn: https://www.linkedin.com/in/mrponmudi
-
----
-
-⭐ Thanks for visiting my profile!
+## On the Bench Right Now
