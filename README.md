@@ -27,7 +27,7 @@ institution:   Bannari Amman Institute of Technology, Sathyamangalam, Tamil Nadu
 roll_no:       7376251EC257
 location:      Coimbatore, Tamil Nadu, India
 current_focus: SDR signal classification, LEO-PNT, embedded Linux infra
-goal:          MS in Germany (Winter 2027) — RF/SDR industry track
+goal:          SOON
 ```
 
 <br>
