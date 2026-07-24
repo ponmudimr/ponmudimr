@@ -36,7 +36,7 @@ goal:          SOON
 
 | Institution | Program | Details |
 |---|---|---|
-| **Bannari Amman Institute of Technology** | B.E. Electronics & Communication Engineering | 2nd Year · Roll No. 22EC004 · Semester III (2026) |
+| **Bannari Amman Institute of Technology** | B.E. Electronics & Communication Engineering | 2nd Year · Roll No. 7376251EC257 · Semester III (2026) |
 
 **Coursework:** Electron Devices, Signal Processing, Electromagnetism & Modern Physics, Data Structures & Algorithms, Engineering Mathematics, Engineering Chemistry
 
