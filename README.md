@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,25:1F6FEB,50:58A6FF,75:1F6FEB,100:0D1117&height=250&section=header&text=Ponmudi%20M.R.&fontSize=65&fontColor=FFFFFF&animation=twinkling&fontAlignY=35&desc=RF%20%7C%20SDR%20%7C%20Embedded%20Linux%20%7C%20LoRa%20Mesh&descAlignY=55&descSize=20&descColor=8B949E" width="100%"/>
+<img src="./hero-banner.svg" width="100%"/>
+
+<h1>Ponmudi M.R.</h1>
+<p><i>RF | SDR | Embedded Linux | LoRa Mesh</i></p>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=750&height=100&lines=%3E+Building+GPS-denied+positioning+systems...;%3E+Decoding+signals+from+low-earth+orbit...;%3E+Meshing+LoRa+nodes+for+disaster+response...;%3E+Lead+%40+Team+404;%3E+Aspiring+DRDO+%2F+RF+Systems+Engineer_" />
 
@@ -41,7 +44,7 @@
             target_branch: output
             build_dir: dist
           env:
-            GITHUB_TOKEN: ${{ '{{' }} secrets.GITHUB_TOKEN {{ '}}' }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 -->
 
 <img src="https://raw.githubusercontent.com/ponmudimr/ponmudimr/output/github-contribution-grid-snake-dark.svg" width="100%"/>
@@ -288,33 +291,3 @@ learning:   German (Nicos Weg) — targeting TU Munich / RWTH Aachen / TU Berlin
 ## 📡 Signal Log
 
 <div align="center">
-
-```
-[ NOAA-19 APT   ]  ████████████████░░░░  DECODED
-[ ORBCOMM DATA  ]  ███████████████████░  DECODED
-[ POCSAG PAGING ]  ████████████████████  DECODED
-[ TACAN 228.796 ]  ██████████████░░░░░░  DECODED
-[ LEO-PNT FIX   ]  ████████████░░░░░░░░  IN PROGRESS
-```
-
-</div>
-
-<br>
-
-## 📫 Get In Touch
-
-<div align="center">
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mrponmudi)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ponmudimr)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ponmudimr.ec25@bitsathy.ac.in)
-
-</div>
-
-<br>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:58A6FF,100:0D1117&height=120&section=footer" width="100%"/>
-
-<div align="center">
-<i>Chasing sub-metre positioning without a single GPS satellite in sight.</i>
-</div>
