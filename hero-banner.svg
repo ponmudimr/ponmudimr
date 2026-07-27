@@ -124,17 +124,17 @@
     </g>
   </g>
 
-  <!-- terminal readout, synced to lock event -->
+  <!-- terminal readout, synced to lock event (fixed: hold-at-0 keyframes prevent overlap) -->
   <text x="16" y="235" font-family="monospace" font-size="12" fill="#8B949E">
-    <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.2;0.24" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;0;0;0" keyTimes="0;0.2;0.24;0.9;0.95;1" dur="8s" repeatCount="indefinite"/>
     &gt; routing traces... autorouter online
   </text>
   <text x="16" y="235" font-family="monospace" font-size="12" fill="#58A6FF">
-    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.26;0.34;0.38" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.34;0.38;1" dur="8s" repeatCount="indefinite"/>
     &gt; ESP32/SX1278 ONLINE :: EMITTING LORA PULSE
   </text>
   <text x="16" y="235" font-family="monospace" font-size="12" fill="#3FB950">
-    <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.4;0.45;0.9;0.95" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.38;0.4;0.45;0.5;0.9;0.95" dur="8s" repeatCount="indefinite"/>
     [TARGET: ORBCOMM // DOPPLER LOCK // POS COMPUTED]
   </text>
 </svg>
