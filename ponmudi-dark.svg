@@ -1,137 +1,147 @@
 <svg viewBox="0 0 1180 610" width="1180" height="610" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Clip path for MAX7219 LED Matrix Display -->
-    <clipPath id="matrix-clip">
-      <rect x="72" y="272" width="356" height="46" rx="4"/>
-    </clipPath>
-    <!-- Clip path for Oscilloscope Display -->
-    <clipPath id="scope-clip">
-      <rect x="72" y="372" width="356" height="76" rx="4"/>
+    <clipPath id="matrix-clip-sar">
+      <rect x="68" y="468" width="364" height="34" rx="4"/>
     </clipPath>
     <!-- LED Matrix Grid Pattern -->
-    <pattern id="dot-grid" width="6" height="6" patternUnits="userSpaceOnUse">
-      <circle cx="3" cy="3" r="1" fill="#1C2128" opacity="0.8"/>
+    <pattern id="dot-grid-sar" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="2.5" cy="2.5" r="0.8" fill="#1C2128" opacity="0.8"/>
     </pattern>
   </defs>
 
-  <!-- Main Container -->
+  <!-- Main Background Card Container -->
   <rect x="0" y="0" width="1180" height="610" rx="14" fill="#0D1117"/>
   <rect x="0" y="0" width="1180" height="610" rx="14" fill="none" stroke="#30363D" stroke-width="1.5"/>
 
-  <!-- Top Title Bar -->
+  <!-- Top Window Bar -->
   <rect x="0" y="0" width="1180" height="34" rx="14" fill="#161B22"/>
   <rect x="0" y="20" width="1180" height="14" fill="#161B22"/>
   <circle cx="22" cy="17" r="6" fill="#FF5F56"/>
   <circle cx="42" cy="17" r="6" fill="#FFBD2E"/>
   <circle cx="62" cy="17" r="6" fill="#27C93F"/>
-  <text x="590.0" y="21" text-anchor="middle" font-family="SFMono-Regular,Consolas,monospace" font-size="12.5" fill="#6E7681">tribalnet.sh --lora-mesh-433mhz</text>
+  <text x="590.0" y="21" text-anchor="middle" font-family="SFMono-Regular,Consolas,monospace" font-size="12.5" fill="#6E7681">tribalnet_sar_map.sh --scan-alerts --lora-433mhz</text>
 
   <!-- Section Titles & Live Indicator -->
-  <text x="46" y="82" font-family="monospace" font-size="12" letter-spacing="2" fill="#00FF9D">TRIBALNET.TOPOLOGY</text>
-  <text x="516" y="82" font-family="monospace" font-size="12" letter-spacing="2" fill="#00FF9D">SYSTEM.TELEMETRY</text>
+  <text x="46" y="82" font-family="monospace" font-size="12" letter-spacing="2" fill="#00FF9D">TRIBALNET.SAR_MAP</text>
+  <text x="516" y="82" font-family="monospace" font-size="12" letter-spacing="2" fill="#00FF9D">TELEMETRY.INFO</text>
   <circle cx="1072" cy="78" r="4" fill="#FF4D4D">
-    <animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.25;1" dur="1.4s" repeatCount="indefinite"/>
   </circle>
-  <text x="1082" y="82" font-family="monospace" font-size="12" letter-spacing="1.5" fill="#FF4D4D">LIVE</text>
+  <text x="1082" y="82" font-family="monospace" font-size="12" letter-spacing="1.5" fill="#FF4D4D">LIVE SAR SCAN</text>
 
-  <!-- LEFT PANEL: TribalNet LoRa Hardware Topology & Displays -->
+  <!-- LEFT PANEL: Disaster & Forest Search Radar Map -->
   <rect x="46" y="100" width="410" height="454" rx="8" fill="#0A0F14" stroke="#30363D"/>
 
-  <!-- Node 1: RANGER STATION -->
-  <rect x="66" y="120" width="130" height="85" rx="6" fill="#161B22" stroke="#00FF9D" stroke-width="1.2"/>
-  <text x="131" y="140" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#00FF9D">RANGER NODE</text>
-  <text x="131" y="158" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#E6EDF3">ESP32 WROOM-32</text>
-  <text x="131" y="174" text-anchor="middle" font-family="monospace" font-size="9" fill="#6E7681">SX1278 (433MHz)</text>
-  <text x="131" y="190" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#FFBD2E">Serial Command</text>
-  
-  <!-- Ranger Antenna & RF Waves -->
-  <line x1="196" y1="162.5" x2="216" y2="162.5" stroke="#00FF9D" stroke-width="2"/>
-  <circle cx="216" cy="162.5" r="3" fill="#00FF9D"/>
-  <circle cx="216" cy="162.5" fill="none" stroke="#00FF9D">
-    <animate attributeName="r" values="3;28;3" dur="2.2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.9;0;0.9" dur="2.2s" repeatCount="indefinite"/>
+  <!-- Map Sector Background Grid & Topo Rings -->
+  <g opacity="0.3" stroke="#00FF9D" stroke-width="0.8">
+    <!-- Topo Grid Lines -->
+    <line x1="46" y1="270" x2="456" y2="270" stroke-dasharray="3 3"/>
+    <line x1="251" y1="100" x2="251" y2="456" stroke-dasharray="3 3"/>
+    <line x1="100" y1="120" x2="400" y2="420" stroke-dasharray="2 4"/>
+    <line x1="400" y1="120" x2="100" y2="420" stroke-dasharray="2 4"/>
+    
+    <!-- Concentric Radar Search Rings -->
+    <circle cx="251" cy="270" r="50" fill="none"/>
+    <circle cx="251" cy="270" r="105" fill="none"/>
+    <circle cx="251" cy="270" r="155" fill="none"/>
+  </g>
+
+  <!-- Sector Labels -->
+  <text x="60" y="122" font-family="monospace" font-size="9" fill="#6E7681">SECTOR 01: NORTH VILLAGES</text>
+  <text x="60" y="445" font-family="monospace" font-size="9" fill="#FF5F56">SECTOR 03: DEEP FOREST (SAR ZONE)</text>
+  <text x="446" y="122" text-anchor="end" font-family="monospace" font-size="9" fill="#6E7681">SECTOR 02: EAST RIDGE</text>
+
+  <!-- Rotating Radar Scanner Beam -->
+  <g transform="translate(0,0)">
+    <path d="M 251 270 L 251 115 A 155 155 0 0 1 360.6 160.4 Z" fill="#00FF9D" opacity="0.16"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 251 270" to="360 251 270" dur="4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- MAP NODE 1: Central Command Station (Gateway Hub) -->
+  <circle cx="251" cy="270" r="6" fill="#00FF9D"/>
+  <circle cx="251" cy="270" fill="none" stroke="#00FF9D" stroke-width="1.5">
+    <animate attributeName="r" values="6;22;6" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="251" y="292" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="bold" fill="#00FF9D">COMMAND GATEWAY HUB</text>
+
+  <!-- MAP NODE 2: Village 01 (Safe) -->
+  <g>
+    <circle cx="140" cy="175" r="4.5" fill="#27C93F"/>
+    <circle cx="140" cy="175" fill="none" stroke="#27C93F">
+      <animate attributeName="r" values="4.5;14;4.5" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="140" y="163" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#27C93F">VILLAGE 01 [SAFE]</text>
+  </g>
+
+  <!-- MAP NODE 3: Village 02 (Emergency Alert) -->
+  <g>
+    <circle cx="360" cy="190" r="5" fill="#FFBD2E"/>
+    <circle cx="360" cy="190" fill="none" stroke="#FFBD2E" stroke-width="1.5">
+      <animate attributeName="r" values="5;18;5" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.1;1" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="360" y="178" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#FFBD2E">VILLAGE 02 ⚠️ ALERT</text>
+  </g>
+
+  <!-- MAP NODE 4: MISSING PERSON SOS BEACON IN DEEP FOREST -->
+  <g>
+    <!-- Crosshair Target Box around Missing Person -->
+    <rect x="136" y="366" width="36" height="36" fill="none" stroke="#FF4D4D" stroke-width="1.2" stroke-dasharray="4 2"/>
+    
+    <!-- Pulsing Red SOS Beacon -->
+    <circle cx="154" cy="384" r="5" fill="#FF4D4D">
+      <animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Expanding Emergency SOS Shockwave Rings -->
+    <circle cx="154" cy="384" fill="none" stroke="#FF4D4D" stroke-width="1.8">
+      <animate attributeName="r" values="5;32;5" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Beacon Label -->
+    <rect x="80" y="408" width="155" height="18" rx="3" fill="#161B22" stroke="#FF4D4D" stroke-width="0.8"/>
+    <text x="157" y="420" text-anchor="middle" font-family="monospace" font-size="8.5" font-weight="bold" fill="#FF4D4D">🚨 MISSING PERSON (SOS)</text>
+  </g>
+
+  <!-- LoRa Telemetry Packets (Missing Person SOS -> Command Hub) -->
+  <line x1="154" y1="384" x2="251" y2="270" stroke="#FF4D4D" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.7"/>
+  <circle cy="384" r="3.5" fill="#FF4D4D">
+    <animate attributeName="cx" values="154;251;154" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="384;270;384" dur="2s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- LoRa Wireless Link & Moving Packets -->
-  <line x1="216" y1="162.5" x2="286" y2="162.5" stroke="#00FF9D" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
-  <text x="251" y="153" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#00FF9D">LoRa RF Link</text>
-  <text x="251" y="176" text-anchor="middle" font-family="monospace" font-size="8" fill="#6E7681">433 MHz</text>
-
-  <!-- Packet 1: Ranger to Village -->
-  <circle cy="162.5" r="3.5" fill="#00FF9D">
-    <animate attributeName="cx" values="216;286;216" dur="2.6s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;0.4;1" dur="2.6s" repeatCount="indefinite"/>
-  </circle>
-  <!-- Packet 2: Village to Ranger (Offset) -->
-  <circle cy="162.5" r="2.5" fill="#FF5F56">
-    <animate attributeName="cx" values="286;216;286" dur="2.6s" repeatCount="indefinite"/>
+  <!-- LoRa Telemetry Packets (Village 02 -> Command Hub) -->
+  <line x1="360" y1="190" x2="251" y2="270" stroke="#FFBD2E" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+  <circle cy="190" r="3" fill="#FFBD2E">
+    <animate attributeName="cx" values="360;251;360" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="190;270;190" dur="2.4s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- Node 2: VILLAGE STATION -->
-  <rect x="306" y="120" width="130" height="85" rx="6" fill="#161B22" stroke="#00FF9D" stroke-width="1.2"/>
-  <text x="371" y="140" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#00FF9D">VILLAGE NODE</text>
-  <text x="371" y="158" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#E6EDF3">ESP32 + MAX7219</text>
-  <text x="371" y="174" text-anchor="middle" font-family="monospace" font-size="9" fill="#6E7681">SX1278 + Buttons</text>
-  <text x="371" y="190" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#FF5F56">Alert Trigger</text>
-
-  <!-- Village Antenna & RF Waves -->
-  <line x1="306" y1="162.5" x2="286" y2="162.5" stroke="#00FF9D" stroke-width="2"/>
-  <circle cx="286" cy="162.5" r="3" fill="#00FF9D"/>
-  <circle cx="286" cy="162.5" fill="none" stroke="#00FF9D">
-    <animate attributeName="r" values="3;28;3" dur="2.2s" repeatCount="indefinite" begin="0.8s"/>
-    <animate attributeName="opacity" values="0.9;0;0.9" dur="2.2s" repeatCount="indefinite" begin="0.8s"/>
-  </circle>
-
-  <!-- Display 1: MAX7219 8x32 LED Matrix Simulation -->
-  <text x="66" y="232" font-family="monospace" font-size="10" letter-spacing="1" fill="#6E7681">MAX7219 8x32 LED MATRIX DISPLAY</text>
-  <rect x="66" y="240" width="370" height="54" rx="6" fill="#05080A" stroke="#30363D"/>
-  <rect x="72" y="246" width="358" height="42" fill="url(#dot-grid)"/>
-  
-  <!-- Scrolling Marquee Text inside Matrix -->
-  <g clip-path="url(#matrix-clip)">
+  <!-- MAX7219 8x32 LED Matrix Live Emergency Alert Feed -->
+  <rect x="62" y="456" width="376" height="48" rx="6" fill="#05080A" stroke="#30363D"/>
+  <rect x="68" y="462" width="364" height="36" fill="url(#dot-grid-sar)"/>
+  <g clip-path="url(#matrix-clip-sar)">
     <g>
-      <text x="400" y="272" font-family="Courier, monospace" font-size="15" font-weight="bold" letter-spacing="3" fill="#FF3366" filter="drop-shadow(0px 0px 3px #FF3366)">
-        ⚠️ EMERGENCY ALERT: VILLAGE IS SAFE! • LORA LINK ACTIVE (433 MHz) • RANGER-VILLAGE CONNECTED •
+      <text x="380" y="485" font-family="Courier, monospace" font-size="14" font-weight="bold" letter-spacing="2.5" fill="#FF4D4D" filter="drop-shadow(0px 0px 3px #FF4D4D)">
+        🚨 EMERGENCY ALERT: MISSING PERSON DETECTED IN DEEP FOREST SECTOR • LORA SOS SIGNAL RECEIVED (433 MHz) • SAR SEARCH TEAM DISPATCHED • VILLAGE 02 FLOOD WARNING ACTIVE •
       </text>
-      <animateTransform attributeName="transform" type="translate" from="0 0" to="-780 0" dur="10s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-880 0" dur="11s" repeatCount="indefinite"/>
     </g>
   </g>
 
-  <!-- Display 2: Oscilloscope RF Signal Chirp Waveform -->
-  <text x="66" y="322" font-family="monospace" font-size="10" letter-spacing="1" fill="#6E7681">RF SIGNAL SCOPE (SX1278 CHIRP MODULATION)</text>
-  <rect x="66" y="330" width="370" height="115" rx="6" fill="#05080A" stroke="#30363D"/>
-  
-  <!-- Oscilloscope Grid Lines -->
-  <line x1="66" y1="387.5" x2="436" y2="387.5" stroke="#161B22" stroke-dasharray="3 3"/>
-  <line x1="251" y1="330" x2="251" y2="445" stroke="#161B22" stroke-dasharray="3 3"/>
-  
-  <!-- Dynamic Oscilloscope Waveform -->
-  <g clip-path="url(#scope-clip)">
-    <path d="M 72 387.5 Q 92 340, 112 387.5 T 152 387.5 T 192 387.5 Q 207 350, 222 387.5 T 252 387.5 Q 272 335, 292 387.5 T 332 387.5 Q 362 345, 392 387.5 T 432 387.5" fill="none" stroke="#00FF9D" stroke-width="2">
-      <animate attributeName="d" values="
-        M 72 387.5 Q 92 340, 112 387.5 T 152 387.5 T 192 387.5 Q 207 350, 222 387.5 T 252 387.5 Q 272 335, 292 387.5 T 332 387.5 Q 362 345, 392 387.5 T 432 387.5;
-        M 72 387.5 Q 92 435, 112 387.5 T 152 387.5 T 192 387.5 Q 207 425, 222 387.5 T 252 387.5 Q 272 440, 292 387.5 T 332 387.5 Q 362 430, 392 387.5 T 432 387.5;
-        M 72 387.5 Q 92 340, 112 387.5 T 152 387.5 T 192 387.5 Q 207 350, 222 387.5 T 252 387.5 Q 272 335, 292 387.5 T 332 387.5 Q 362 345, 392 387.5 T 432 387.5"
-        dur="1.8s" repeatCount="indefinite"/>
-    </path>
-    <!-- Scope Leading Laser Tracer -->
-    <circle cx="251" cy="387.5" r="4" fill="#00FF9D">
-      <animate attributeName="cx" values="72;432;72" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="387.5;350;425;387.5" dur="3s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-  <text x="76" y="438" font-family="monospace" font-size="8.5" fill="#00FF9D">BW: 125kHz | SF: 7 | CR: 4/5</text>
-  <text x="426" y="438" text-anchor="end" font-family="monospace" font-size="8.5" fill="#6E7681">433.00 MHz</text>
-
   <!-- Handle Badge Pill -->
-  <rect x="66" y="512" width="370" height="28" rx="14" fill="#0D1117" stroke="#00FF9D" stroke-width="1"/>
-  <text x="251" y="530" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#00FF9D">@ponmudimr / TribalNet</text>
+  <rect x="62" y="516" width="376" height="26" rx="13" fill="#0D1117" stroke="#00FF9D" stroke-width="1"/>
+  <text x="250" y="533" text-anchor="middle" font-family="monospace" font-size="11.5" font-weight="bold" fill="#00FF9D">@ponmudimr / TribalNet SAR Radar</text>
 
-  <!-- RIGHT PANEL: LoRa Telemetry & Developer Profile -->
+  <!-- RIGHT PANEL: System Telemetry & Engineer Profile -->
   <!-- Header Telemetry Box -->
   <rect x="496" y="100" width="638" height="60" rx="6" fill="#0A0F14" stroke="#30363D"/>
-  <text x="516" y="122" font-family="monospace" font-size="11" font-weight="bold" fill="#00FF9D">SYSTEM CONFIGURATION &amp; LORA TELEMETRY</text>
-  <text x="516" y="144" font-family="monospace" font-size="10" fill="#E6EDF3">FREQ: 433.00 MHz  |  SF: 7  |  BW: 125 kHz  |  SYNC: 0xF3  |  CRC: ENABLED</text>
+  <text x="516" y="122" font-family="monospace" font-size="11" font-weight="bold" fill="#00FF9D">TRIBALNET OFF-GRID DISASTER &amp; SAR TELEMETRY</text>
+  <text x="516" y="144" font-family="monospace" font-size="10" fill="#E6EDF3">LORA: 433.00 MHz  |  NODES: 3 ACTIVE  |  FOREST SOS: LINK OK  |  SAR: EN ROUTE</text>
 
   <!-- Profile Details Key-Value List -->
   <g font-family="monospace" font-size="13">
@@ -148,52 +158,52 @@
     <!-- Row 3: Flagship Project -->
     <text x="516" y="249" fill="#6E7681">Project</text>
     <text x="579.8" y="249" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="249" text-anchor="end" font-weight="bold" fill="#00FF9D">TribalNet (LoRa Emergency Comm Link)</text>
+    <text x="1134" y="249" text-anchor="end" font-weight="bold" fill="#00FF9D">TribalNet (Off-Grid Disaster &amp; SAR Mesh)</text>
 
     <!-- Row 4 -->
-    <text x="516" y="276" fill="#6E7681">Hardware</text>
+    <text x="516" y="276" fill="#6E7681">Topology</text>
     <text x="587.2" y="276" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="276" text-anchor="end" fill="#E6EDF3">ESP32, SX1278, MAX7219 8x32 Matrix</text>
+    <text x="1134" y="276" text-anchor="end" fill="#E6EDF3">Village Nodes + Forest SAR + Command Hub</text>
 
     <!-- Row 5 -->
-    <text x="516" y="303" fill="#6E7681">Origin</text>
-    <text x="572.4" y="303" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="303" text-anchor="end" fill="#E6EDF3">Coimbatore, Tamil Nadu</text>
+    <text x="516" y="303" fill="#6E7681">Hardware</text>
+    <text x="587.2" y="303" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="303" text-anchor="end" fill="#E6EDF3">ESP32, SX1278 LoRa, Solar BMS, Panic SOS</text>
 
     <!-- Row 6 -->
-    <text x="516" y="330" fill="#6E7681">Education</text>
-    <text x="594.6" y="330" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="330" text-anchor="end" fill="#E6EDF3">B.E. ECE, 2nd Year - BIT Sathyamangalam</text>
+    <text x="516" y="330" fill="#6E7681">Origin</text>
+    <text x="572.4" y="330" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="330" text-anchor="end" fill="#E6EDF3">Coimbatore, Tamil Nadu</text>
 
     <!-- Row 7 -->
-    <text x="516" y="357" fill="#6E7681">Status</text>
-    <text x="572.4" y="357" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="357" text-anchor="end" fill="#E6EDF3">Designing + Prototyping + Shipping</text>
+    <text x="516" y="357" fill="#6E7681">Education</text>
+    <text x="594.6" y="357" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="357" text-anchor="end" fill="#E6EDF3">B.E. ECE, 2nd Year - BIT Sathyamangalam</text>
 
     <!-- Row 8 -->
-    <text x="516" y="384" fill="#6E7681">ToolChain</text>
-    <text x="594.6" y="384" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="384" text-anchor="end" fill="#E6EDF3">SDR++, GNURadio, Zephyr, Altium, Arduino</text>
+    <text x="516" y="384" fill="#6E7681">Status</text>
+    <text x="572.4" y="384" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="384" text-anchor="end" fill="#E6EDF3">Designing + Prototyping + Shipping</text>
 
     <!-- Row 9 -->
-    <text x="516" y="411" fill="#6E7681">Core.Lang</text>
-    <text x="594.6" y="411" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="411" text-anchor="end" fill="#E6EDF3">Embedded C, C++, Python</text>
+    <text x="516" y="411" fill="#6E7681">ToolChain</text>
+    <text x="594.6" y="411" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="411" text-anchor="end" fill="#E6EDF3">SDR++, GNURadio, Zephyr, Altium, Arduino</text>
 
     <!-- Row 10 -->
-    <text x="516" y="438" fill="#6E7681">Core.Domain</text>
-    <text x="609.4" y="438" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="438" text-anchor="end" fill="#E6EDF3">RF/SDR, LoRa Mesh, LEO-PNT</text>
+    <text x="516" y="438" fill="#6E7681">Core.Lang</text>
+    <text x="594.6" y="438" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="438" text-anchor="end" fill="#E6EDF3">Embedded C, C++, Python</text>
 
     <!-- Row 11 -->
-    <text x="516" y="465" fill="#6E7681">Core.Team</text>
-    <text x="594.6" y="465" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="465" text-anchor="end" fill="#E6EDF3">Team 404 (BIT Sathyamangalam)</text>
+    <text x="516" y="465" fill="#6E7681">Core.Domain</text>
+    <text x="609.4" y="465" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="465" text-anchor="end" fill="#E6EDF3">RF/SDR, LoRa Mesh, LEO-PNT, SAR Systems</text>
 
     <!-- Row 12 -->
-    <text x="516" y="492" fill="#6E7681">Grid.Mail</text>
-    <text x="594.6" y="492" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="492" text-anchor="end" fill="#E6EDF3">mrponmudi747@gmail.com</text>
+    <text x="516" y="492" fill="#6E7681">Core.Team</text>
+    <text x="594.6" y="492" fill="#30363D"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="1134" y="492" text-anchor="end" fill="#E6EDF3">Team 404 (BIT Sathyamangalam)</text>
 
     <!-- Row 13 -->
     <text x="516" y="519" fill="#6E7681">Grid.GitHub</text>
