@@ -1,11 +1,11 @@
 <svg viewBox="0 0 1180 610" width="1180" height="610" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Clip path for MAX7219 LED Matrix Display -->
-    <clipPath id="matrix-clip-sar-light">
+    <clipPath id="matrix-clip-hills-light">
       <rect x="68" y="468" width="364" height="34" rx="4"/>
     </clipPath>
     <!-- LED Matrix Grid Pattern -->
-    <pattern id="dot-grid-sar-light" width="5" height="5" patternUnits="userSpaceOnUse">
+    <pattern id="dot-grid-hills-light" width="5" height="5" patternUnits="userSpaceOnUse">
       <circle cx="2.5" cy="2.5" r="0.8" fill="#334155" opacity="0.8"/>
     </pattern>
   </defs>
@@ -20,37 +20,61 @@
   <circle cx="22" cy="17" r="6" fill="#FF5F56"/>
   <circle cx="42" cy="17" r="6" fill="#FFBD2E"/>
   <circle cx="62" cy="17" r="6" fill="#27C93F"/>
-  <text x="590.0" y="21" text-anchor="middle" font-family="SFMono-Regular,Consolas,monospace" font-size="12.5" fill="#94A3B8">tribalnet_sar_map.sh --scan-alerts --lora-433mhz</text>
+  <text x="590.0" y="21" text-anchor="middle" font-family="SFMono-Regular,Consolas,monospace" font-size="12.5" fill="#94A3B8">tribalnet_hills_topo_map.sh --hill-scan --lora-433mhz</text>
 
   <!-- Section Titles & Live Indicator -->
-  <text x="46" y="82" font-family="monospace" font-size="12" letter-spacing="2" fill="#0891B2">TRIBALNET.SAR_MAP</text>
+  <text x="46" y="82" font-family="monospace" font-size="12" letter-spacing="2" fill="#0891B2">HILL_TOPO.RADAR_MAP</text>
   <text x="516" y="82" font-family="monospace" font-size="12" letter-spacing="2" fill="#0891B2">TELEMETRY.INFO</text>
   <circle cx="1072" cy="78" r="4" fill="#EF4444">
     <animate attributeName="opacity" values="1;0.25;1" dur="1.4s" repeatCount="indefinite"/>
   </circle>
   <text x="1082" y="82" font-family="monospace" font-size="12" letter-spacing="1.5" fill="#EF4444">LIVE SAR SCAN</text>
 
-  <!-- LEFT PANEL: Disaster & Forest Search Radar Map -->
+  <!-- LEFT PANEL: Topographical Hill Map Radar -->
   <rect x="46" y="100" width="410" height="454" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
 
-  <!-- Map Sector Background Grid & Topo Rings -->
-  <g opacity="0.35" stroke="#0891B2" stroke-width="0.8">
-    <!-- Topo Grid Lines -->
+  <!-- Radar Crosshairs & Radial Search Grid -->
+  <g opacity="0.3" stroke="#0891B2" stroke-width="0.8">
     <line x1="46" y1="270" x2="456" y2="270" stroke-dasharray="3 3"/>
     <line x1="251" y1="100" x2="251" y2="456" stroke-dasharray="3 3"/>
-    <line x1="100" y1="120" x2="400" y2="420" stroke-dasharray="2 4"/>
-    <line x1="400" y1="120" x2="100" y2="420" stroke-dasharray="2 4"/>
-    
-    <!-- Concentric Radar Search Rings -->
-    <circle cx="251" cy="270" r="50" fill="none"/>
-    <circle cx="251" cy="270" r="105" fill="none"/>
+    <circle cx="251" cy="270" r="60" fill="none"/>
+    <circle cx="251" cy="270" r="115" fill="none"/>
     <circle cx="251" cy="270" r="155" fill="none"/>
   </g>
 
-  <!-- Sector Labels -->
-  <text x="60" y="122" font-family="monospace" font-size="9" fill="#94A3B8">SECTOR 01: NORTH VILLAGES</text>
-  <text x="60" y="445" font-family="monospace" font-size="9" fill="#EF4444">SECTOR 03: DEEP FOREST (SAR ZONE)</text>
-  <text x="446" y="122" text-anchor="end" font-family="monospace" font-size="9" fill="#94A3B8">SECTOR 02: EAST RIDGE</text>
+  <!-- TOPOGRAPHICAL HILL ELEVATION CONTOURS -->
+  <!-- Hill Peak 1: North-West Ridge (Elev 1120m) -->
+  <g fill="none" stroke="#0891B2" stroke-width="1.2">
+    <!-- Outer Contour 400m -->
+    <path d="M 75 180 C 95 125, 205 125, 225 180 C 245 225, 145 255, 75 180 Z" opacity="0.3"/>
+    <!-- Mid Contour 700m -->
+    <path d="M 95 175 C 110 135, 185 135, 205 175 C 215 205, 140 225, 95 175 Z" opacity="0.45"/>
+    <!-- Peak Contour 1000m -->
+    <path d="M 120 170 C 130 145, 170 145, 180 170 C 185 185, 135 195, 120 170 Z" stroke="#0891B2" stroke-width="1.5" opacity="0.7" fill="#0891B2" fill-opacity="0.08"/>
+    <text x="148" y="165" text-anchor="middle" font-family="monospace" font-size="8" fill="#0891B2">▲ 1120m PEAK</text>
+  </g>
+
+  <!-- Hill Peak 2: East Ridge (Elev 750m) -->
+  <g fill="none" stroke="#0891B2" stroke-width="1.2">
+    <path d="M 310 160 C 330 115, 425 125, 435 175 C 445 215, 355 235, 310 160 Z" opacity="0.3"/>
+    <path d="M 330 165 C 345 130, 405 135, 415 170 C 420 195, 360 210, 330 165 Z" stroke="#0891B2" stroke-width="1.4" opacity="0.55"/>
+    <text x="372" y="160" text-anchor="middle" font-family="monospace" font-size="8" fill="#0891B2">▲ 750m RIDGE</text>
+  </g>
+
+  <!-- Hill Peak 3: South-East Forest Mountain Range (Elev 980m - SAR SOS Zone) -->
+  <g fill="none" stroke="#EF4444" stroke-width="1.2">
+    <!-- Outer Contour 300m -->
+    <path d="M 105 375 C 125 310, 255 315, 275 375 C 285 430, 175 440, 105 375 Z" opacity="0.35" stroke="#0891B2"/>
+    <!-- Mid Contour 600m -->
+    <path d="M 125 378 C 140 330, 235 332, 250 378 C 260 415, 160 422, 125 378 Z" opacity="0.5" stroke="#0891B2"/>
+    <!-- High Danger Contour 850m -->
+    <path d="M 145 380 C 155 348, 210 350, 220 380 C 225 400, 160 405, 145 380 Z" stroke="#EF4444" stroke-width="1.5" opacity="0.85" fill="#EF4444" fill-opacity="0.12"/>
+    <text x="182" y="344" text-anchor="middle" font-family="monospace" font-size="8" font-weight="bold" fill="#EF4444">⛰️ DEEP FOREST HILLS (850m)</text>
+  </g>
+
+  <!-- Mountain River Valley Path -->
+  <path d="M 46 215 Q 160 240, 251 270 T 456 315" stroke="#0284C7" stroke-width="1.5" stroke-dasharray="5 3" fill="none" opacity="0.6"/>
+  <text x="330" y="278" font-family="monospace" font-size="8" fill="#0284C7">🌊 MOUNTAIN RIVER VALLEY</text>
 
   <!-- Rotating Radar Scanner Beam -->
   <g transform="translate(0,0)">
@@ -58,90 +82,91 @@
     <animateTransform attributeName="transform" type="rotate" from="0 251 270" to="360 251 270" dur="4s" repeatCount="indefinite"/>
   </g>
 
-  <!-- MAP NODE 1: Central Command Station (Gateway Hub) -->
+  <!-- MAP NODE 1: Central Command Station (Base Camp) -->
   <circle cx="251" cy="270" r="6" fill="#0891B2"/>
   <circle cx="251" cy="270" fill="none" stroke="#0891B2" stroke-width="1.5">
     <animate attributeName="r" values="6;22;6" dur="2s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <text x="251" y="292" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="bold" fill="#0891B2">COMMAND GATEWAY HUB</text>
+  <text x="251" y="294" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="bold" fill="#0891B2">BASE CAMP GATEWAY</text>
 
-  <!-- MAP NODE 2: Village 01 (Safe) -->
+  <!-- MAP NODE 2: Village 01 (Valley Base - Safe) -->
   <g>
-    <circle cx="140" cy="175" r="4.5" fill="#16A34A"/>
-    <circle cx="140" cy="175" fill="none" stroke="#16A34A">
+    <circle cx="130" cy="205" r="4.5" fill="#16A34A"/>
+    <circle cx="130" cy="205" fill="none" stroke="#16A34A">
       <animate attributeName="r" values="4.5;14;4.5" dur="2.4s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.8;0;0.8" dur="2.4s" repeatCount="indefinite"/>
     </circle>
-    <text x="140" y="163" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#16A34A">VILLAGE 01 [SAFE]</text>
+    <text x="130" y="220" text-anchor="middle" font-family="monospace" font-size="8.5" font-weight="bold" fill="#16A34A">VILLAGE 01 [SAFE]</text>
   </g>
 
-  <!-- MAP NODE 3: Village 02 (Emergency Alert) -->
+  <!-- MAP NODE 3: Village 02 (Ridge Station - Alert) -->
   <g>
-    <circle cx="360" cy="190" r="5" fill="#D97706"/>
-    <circle cx="360" cy="190" fill="none" stroke="#D97706" stroke-width="1.5">
+    <circle cx="365" cy="185" r="5" fill="#D97706"/>
+    <circle cx="365" cy="185" fill="none" stroke="#D97706" stroke-width="1.5">
       <animate attributeName="r" values="5;18;5" dur="1.8s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;0.1;1" dur="1.8s" repeatCount="indefinite"/>
     </circle>
-    <text x="360" y="178" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#D97706">VILLAGE 02 ⚠️ ALERT</text>
+    <text x="365" y="173" text-anchor="middle" font-family="monospace" font-size="8.5" font-weight="bold" fill="#D97706">VILLAGE 02 ⚠️ ALERT</text>
   </g>
 
-  <!-- MAP NODE 4: MISSING PERSON SOS BEACON IN DEEP FOREST -->
+  <!-- MAP NODE 4: MISSING PERSON SOS BEACON IN RUGGED HILL FORESTS -->
   <g>
-    <!-- Crosshair Target Box around Missing Person -->
-    <rect x="136" y="366" width="36" height="36" fill="none" stroke="#EF4444" stroke-width="1.2" stroke-dasharray="4 2"/>
+    <!-- Target Crosshairs around Hill SOS Beacon -->
+    <line x1="162" y1="380" x2="202" y2="380" stroke="#EF4444" stroke-width="1.2" stroke-dasharray="3 2"/>
+    <line x1="182" y1="360" x2="182" y2="400" stroke="#EF4444" stroke-width="1.2" stroke-dasharray="3 2"/>
     
     <!-- Pulsing Red SOS Beacon -->
-    <circle cx="154" cy="384" r="5" fill="#EF4444">
-      <animate attributeName="opacity" values="1;0.2;1" dur="0.8s" repeatCount="indefinite"/>
+    <circle cx="182" cy="380" r="5.5" fill="#EF4444">
+      <animate attributeName="opacity" values="1;0.15;1" dur="0.8s" repeatCount="indefinite"/>
     </circle>
     
     <!-- Expanding Emergency SOS Shockwave Rings -->
-    <circle cx="154" cy="384" fill="none" stroke="#EF4444" stroke-width="1.8">
-      <animate attributeName="r" values="5;32;5" dur="1.6s" repeatCount="indefinite"/>
+    <circle cx="182" cy="380" fill="none" stroke="#EF4444" stroke-width="1.8">
+      <animate attributeName="r" values="5.5;34;5.5" dur="1.6s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="1;0;1" dur="1.6s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Beacon Label -->
-    <rect x="80" y="408" width="155" height="18" rx="3" fill="#FFFFFF" stroke="#EF4444" stroke-width="0.8"/>
-    <text x="157" y="420" text-anchor="middle" font-family="monospace" font-size="8.5" font-weight="bold" fill="#EF4444">🚨 MISSING PERSON (SOS)</text>
+    <!-- Beacon Tag -->
+    <rect x="105" y="405" width="154" height="18" rx="3" fill="#FFFFFF" stroke="#EF4444" stroke-width="0.8"/>
+    <text x="182" y="417" text-anchor="middle" font-family="monospace" font-size="8.5" font-weight="bold" fill="#EF4444">🚨 MISSING PERSON IN HILLS</text>
   </g>
 
-  <!-- LoRa Telemetry Packets (Missing Person SOS -> Command Hub) -->
-  <line x1="154" y1="384" x2="251" y2="270" stroke="#EF4444" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.7"/>
-  <circle cy="384" r="3.5" fill="#EF4444">
-    <animate attributeName="cx" values="154;251;154" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="384;270;384" dur="2s" repeatCount="indefinite"/>
+  <!-- LoRa Telemetry Packets (Hill SOS -> Base Camp) -->
+  <line x1="182" y1="380" x2="251" y2="270" stroke="#EF4444" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.75"/>
+  <circle cy="380" r="3.5" fill="#EF4444">
+    <animate attributeName="cx" values="182;251;182" dur="2.1s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="380;270;380" dur="2.1s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- LoRa Telemetry Packets (Village 02 -> Command Hub) -->
-  <line x1="360" y1="190" x2="251" y2="270" stroke="#D97706" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
-  <circle cy="190" r="3" fill="#D97706">
-    <animate attributeName="cx" values="360;251;360" dur="2.4s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="190;270;190" dur="2.4s" repeatCount="indefinite"/>
+  <!-- LoRa Telemetry Packets (Ridge Village 02 -> Base Camp) -->
+  <line x1="365" y1="185" x2="251" y2="270" stroke="#D97706" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+  <circle cy="185" r="3" fill="#D97706">
+    <animate attributeName="cx" values="365;251;365" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="185;270;185" dur="2.5s" repeatCount="indefinite"/>
   </circle>
 
   <!-- MAX7219 8x32 LED Matrix Live Emergency Alert Feed -->
   <rect x="62" y="456" width="376" height="48" rx="6" fill="#0F172A" stroke="#CBD5E1"/>
-  <rect x="68" y="462" width="364" height="36" fill="url(#dot-grid-sar-light)"/>
-  <g clip-path="url(#matrix-clip-sar-light)">
+  <rect x="68" y="462" width="364" height="36" fill="url(#dot-grid-hills-light)"/>
+  <g clip-path="url(#matrix-clip-hills-light)">
     <g>
       <text x="380" y="485" font-family="Courier, monospace" font-size="14" font-weight="bold" letter-spacing="2.5" fill="#FF4D4D" filter="drop-shadow(0px 0px 3px #FF4D4D)">
-        🚨 EMERGENCY ALERT: MISSING PERSON DETECTED IN DEEP FOREST SECTOR • LORA SOS SIGNAL RECEIVED (433 MHz) • SAR SEARCH TEAM DISPATCHED • VILLAGE 02 FLOOD WARNING ACTIVE •
+        🚨 EMERGENCY ALERT: MISSING PERSON SOS BEACON LOCATED IN HILL SECTOR (ELEV 850m) • LORA SIGNAL STRENGTH: -84 dBm • SAR MOUNTAIN RESCUE DISPATCHED •
       </text>
-      <animateTransform attributeName="transform" type="translate" from="0 0" to="-880 0" dur="11s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-920 0" dur="11.5s" repeatCount="indefinite"/>
     </g>
   </g>
 
   <!-- Handle Badge Pill -->
   <rect x="62" y="516" width="376" height="26" rx="13" fill="#FFFFFF" stroke="#0891B2" stroke-width="1"/>
-  <text x="250" y="533" text-anchor="middle" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0891B2">@ponmudimr / TribalNet SAR Radar</text>
+  <text x="250" y="533" text-anchor="middle" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0891B2">@ponmudimr / TribalNet Hill Topo Radar</text>
 
   <!-- RIGHT PANEL: System Telemetry & Engineer Profile -->
   <!-- Header Telemetry Box -->
   <rect x="496" y="100" width="638" height="60" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
-  <text x="516" y="122" font-family="monospace" font-size="11" font-weight="bold" fill="#0891B2">TRIBALNET OFF-GRID DISASTER &amp; SAR TELEMETRY</text>
-  <text x="516" y="144" font-family="monospace" font-size="10" fill="#0F172A">LORA: 433.00 MHz  |  NODES: 3 ACTIVE  |  FOREST SOS: LINK OK  |  SAR: EN ROUTE</text>
+  <text x="516" y="122" font-family="monospace" font-size="11" font-weight="bold" fill="#0891B2">TRIBALNET HILL TOPO RADAR &amp; SAR TELEMETRY</text>
+  <text x="516" y="144" font-family="monospace" font-size="10" fill="#0F172A">LORA: 433.00 MHz  |  HILL ELEV: 1120m MAX  |  SOS BEACON: ACTIVE  |  SAR: DISPATCHED</text>
 
   <!-- Profile Details Key-Value List -->
   <g font-family="monospace" font-size="13">
@@ -158,12 +183,12 @@
     <!-- Row 3: Flagship Project -->
     <text x="516" y="249" fill="#94A3B8">Project</text>
     <text x="579.8" y="249" fill="#E2E8F0"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="249" text-anchor="end" font-weight="bold" fill="#0891B2">TribalNet (Off-Grid Disaster &amp; SAR Mesh)</text>
+    <text x="1134" y="249" text-anchor="end" font-weight="bold" fill="#0891B2">TribalNet (Hill Topo Disaster &amp; SAR Mesh)</text>
 
     <!-- Row 4 -->
     <text x="516" y="276" fill="#94A3B8">Topology</text>
     <text x="587.2" y="276" fill="#E2E8F0"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</text>
-    <text x="1134" y="276" text-anchor="end" fill="#0F172A">Village Nodes + Forest SAR + Command Hub</text>
+    <text x="1134" y="276" text-anchor="end" fill="#0F172A">Hill Contours + Forest SOS Beacon + Base Camp</text>
 
     <!-- Row 5 -->
     <text x="516" y="303" fill="#94A3B8">Hardware</text>
